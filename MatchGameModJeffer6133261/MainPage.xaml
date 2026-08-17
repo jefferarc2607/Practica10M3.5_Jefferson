@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MatchGameModJeffer6133261.MainPage">
+    <ScrollView>
+            <VerticalStackLayout
+            Spacing="15"
+            Padding="20,10"
+            VerticalOptions="Center">
+
+                <!-- titulo del juego -->
+                <Label Text="MATCH GAME" 
+                   FontSize="28" 
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#2196F3"/>
+
+                <!-- aqui mostramos el tiempo que llevamos jugando -->
+                <Label x:Name="TiempoLabel" 
+                   Text="Tiempo: 0 segundos" 
+                   FontSize="18"
+                   HorizontalOptions="Center"
+                   TextColor="#FFFFFF"/>
+
+                <!-- boton para reiniciar el juego cuando queramos -->
+                <Button x:Name="ReiniciarButton"
+                    Text="REINICIAR JUEGO"
+                    Clicked="OnReiniciarClicked"
+                    BackgroundColor="#FF6B6B"
+                    TextColor="White"
+                    FontSize="16"
+                    CornerRadius="10"
+                    HeightRequest="50"/>
+
+                <!-- la cuadricula donde estan los emojis -->
+                <Grid x:Name="Grid1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                        <RowDefinition Height="80"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- aqui van las 16 cartas, cada una con su emoji -->
+                    <!-- fila 1 -->
+                    <Label x:Name="Label00" Text="?" FontSize="36" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#F0F0F0" WidthRequest="70" HeightRequest="70">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label x:Name="Label01" Text="?" FontSize="36" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#F0F0F0" WidthRequest="70" HeightRequest="70">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label x:Name="Label02" Text="?" FontSize="36" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#F0F0F0" WidthRequest="70" HeightRequest="70">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label x:Name="Label03" Text="?" FontSize="36" Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#F0F0F0" WidthRequest="70" HeightRequest="70">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <!-- fila 2 -->
+                    <Label x:Name="Label10" Text="?" FontSize="36" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#F0F0F0" WidthRequest="70" HeightRequest="70">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label x:Name="Label11" Text="?" FontSize="36" Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#F0F0F0" WidthRequest="70" HeightRequest="70">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label x:Name="Label12" Text="?" FontSize="36" Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#F0F0F0" WidthRequest="70" HeightRequest="70">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label x:Name="Label13" Text="?" FontSize="36" Grid.Row="1" Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#F0F0F0" WidthRequest="70" HeightRequest="70">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <!-- fila 3 -->
+                    <Label x:Name="Label20" Text="?" FontSize="36" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#F0F0F0" WidthRequest="70" HeightRequest="70">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label x:Name="Label21" Text="?" FontSize="36" Grid.Row="2" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#F0F0F0" WidthRequest="70" HeightRequest="70">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label x:Name="Label22" Text="?" FontSize="36" Grid.Row="2" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#F0F0F0" WidthRequest="70" HeightRequest="70">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label x:Name="Label23" Text="?" FontSize="36" Grid.Row="2" Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#F0F0F0" WidthRequest="70" HeightRequest="70">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <!-- fila 4 -->
+                    <Label x:Name="Label30" Text="?" FontSize="36" Grid.Row="3" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#F0F0F0" WidthRequest="70" HeightRequest="70">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label x:Name="Label31" Text="?" FontSize="36" Grid.Row="3" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#F0F0F0" WidthRequest="70" HeightRequest="70">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label x:Name="Label32" Text="?" FontSize="36" Grid.Row="3" Grid.Column="2" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#F0F0F0" WidthRequest="70" HeightRequest="70">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label x:Name="Label33" Text="?" FontSize="36" Grid.Row="3" Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#F0F0F0" WidthRequest="70" HeightRequest="70">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLabelTapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+
+                <!-- mensaje que aparece cuando ganamos -->
+                <Label x:Name="MensajeGanaste" 
+                   Text="🎉¡FELICIDADES! ¡COMPLETASTE EL JUEGO!" 
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#4CAF50"
+                   IsVisible="False"/>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+    </ContentPage>
